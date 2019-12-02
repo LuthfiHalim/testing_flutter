@@ -10,7 +10,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 //import 'package:flutter_statefulwidget_loginpage_luthfi/main.dart';
 import 'package:flutter_statefulwidget_loginpage_luthfi/box_widget.dart';
-    Icon iconbaru = Icon(Icons.calendar_today);
+Icon iconbaru = Icon(Icons.calendar_today);
 
 class Mine extends StatelessWidget{
   @override
@@ -21,11 +21,12 @@ class Mine extends StatelessWidget{
 }
 
 void main() {
-  testWidgets('test box widget', (WidgetTester tester) async {
+  testWidgets('test all widget', (WidgetTester tester) async {
     await tester.pumpWidget(Mine());
 
     final titleFinder = find.text('test');
-    expect(titleFinder, findsNothing);
+    expect(titleFinder, findsOneWidget);
+    expect(find.byIcon(Icons.calendar_today), findsOneWidget);
 
 
 
